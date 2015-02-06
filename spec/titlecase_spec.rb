@@ -17,6 +17,11 @@ describe String do
       string = "there is nothing to be afraid of"
       expect(string.titlecase).to eq "There Is Nothing to Be Afraid Of"
     end
+
+    it "will ignore words that contain a capital letter other than the first letter" do
+      string = "Apple releases new version of iTunes"
+      expect(string.titlecase).to eq "Apple Releases New Version of iTunes"
+    end
   end
 
   describe "#titlecase!" do

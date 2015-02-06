@@ -16,18 +16,22 @@ class String
 
   def titlecase
     string = self.split
-    string.first.capitalize!
-    string.last.capitalize!
     string.each do |word|
-      unless @@small_words.include?(word)
-        word.capitalize!
+      unless word =~ /[A-Z]/ || @@small_words.include?(word)
+          word.capitalize!
       end
+    end
+    unless string.first =~ /[A-Z]/
+      string.first.capitalize!
+    end
+    unless string.last =~ /[A-Z]/
+      string.last.capitalize!
     end
     string.join(" ")
   end
 
   def titlecase!
-    self.replace self.titlecase
+    replace titlecase
   end
 
 end
