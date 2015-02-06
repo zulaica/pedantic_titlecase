@@ -22,6 +22,11 @@ describe String do
       string = "Apple releases new version of iTunes"
       expect(string.titlecase).to eq "Apple Releases New Version of iTunes"
     end
+
+    it "will downcase words that were incorrectly input capitalized" do
+      string = "There Is A Dog Barking In An Alley"
+      expect(string.titlecase).to eq "There Is a Dog Barking in an Alley"
+    end
   end
 
   describe "#titlecase!" do
