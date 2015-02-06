@@ -26,4 +26,8 @@ class String
     string.join(" ")
   end
 
+  def titlecase!
+    self.replace self.titlecase
+  end
+
 end
