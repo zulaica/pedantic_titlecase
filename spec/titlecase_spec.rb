@@ -8,12 +8,12 @@ describe String do
       expect(string.titlecase).to eq "Dog Walks Into a Wall"
     end
 
-    it "always capitalize the first word of a title" do
+    it "always capitalizes the first word of a title" do
       string = "the quick brown fox jumps over the lazy dog"
       expect(string.titlecase).to eq "The Quick Brown Fox Jumps Over the Lazy Dog"
     end
 
-    it "always capitalize the last word of a title" do
+    it "always capitalizes the last word of a title" do
       string = "there is nothing to be afraid of"
       expect(string.titlecase).to eq "There Is Nothing to Be Afraid Of"
     end
