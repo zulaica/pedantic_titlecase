@@ -1,27 +1,20 @@
+require "yaml"
+
 class String
 
-  @@small_words = [
-                  "a", "an", "and", "as", "at",
-                  "but", "by",
-                  "en",
-                  "for", "from",
-                  "if", "in",
-                  "nor",
-                  "of", "on", "or",
-                  "per",
-                  "the", "to",
-                  "v", "via", "vs",
-                  "with"
-                  ]
+  exceptions = YAML::load_file(File.join(__dir__, "../exceptions.yml"))
+  # binding.pry
+
+  @@exceptions = exceptions["default"]
 
   def titlecase
     string = self.split
 
     string.each do |word|
-      if @@small_words.include?(word.downcase)
+      if @@exceptions.include?(word.downcase)
         word.downcase!
       end
-      unless word =~ /[A-Z]/ || @@small_words.include?(word)
+      unless word =~ /[A-Z]/ || @@exceptions.include?(word)
         word.capitalize!
       end
     end
