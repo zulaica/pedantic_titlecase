@@ -2,19 +2,18 @@ require "yaml"
 
 class String
 
-  exceptions = YAML::load_file(File.join(__dir__, "../exceptions.yml"))
-  # binding.pry
+  @@guides = YAML::load_file(File.join(__dir__, "../guides.yml"))
 
-  @@exceptions = exceptions["default"]
+  def titlecase(guide = "default")
+    @exceptions = @@guides[guide]
 
-  def titlecase
     string = self.split
 
     string.each do |word|
-      if @@exceptions.include?(word.downcase)
+      if @exceptions.include?(word.downcase)
         word.downcase!
       end
-      unless word =~ /[A-Z]/ || @@exceptions.include?(word)
+      unless word =~ /[A-Z]/ || @exceptions.include?(word)
         word.capitalize!
       end
     end

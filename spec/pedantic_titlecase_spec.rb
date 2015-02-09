@@ -30,7 +30,7 @@ describe String do
   end
 
   describe "#titlecase!" do
-    it "will titlecase and modify the receiver" do
+    it "titlecases and modifies the receiver" do
       string = "there is nothing to be afraid of"
       string.titlecase!
       expect(string).to eq "There Is Nothing to Be Afraid Of"

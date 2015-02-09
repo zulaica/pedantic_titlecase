@@ -1,0 +1,42 @@
+default:
+  - a
+  - an
+  - and
+  - as
+  - at
+  - but
+  - by
+  - en
+  - for
+  - if
+  - in
+  - of
+  - "on"
+  - or
+  - the
+  - to
+  - v
+  - v.
+  - via
+  - vs
+  - vs.
+
+# MLA:
+#   # articles
+#   - a
+#   - an
+#   - the
+#   # coordinating conjunctions
+#   - and
+#   - but
+#   - for
+#   - nor
+#   - or
+#   - so
+#   - yet
+#   # prepositions
+#   - above
+#   - below
+#   - "on"
+#   - to
+#   - throughout
