@@ -11,15 +11,11 @@ class String
     string = self.split
 
     string.each do |word|
-      # Skip over exceptions
-      unless word =~ /[A-Z]/ || @exceptions.include?(word)
-        word.capitalize!
-      end
+      # Capitalize the word unless exceptions are met
+      word.capitalize! unless word =~ /[A-Z]/ || @exceptions.include?(word)
 
       # Downcase exceptions that were incorrectly input capitalized
-      if @exceptions.include?(word.downcase)
-        word.downcase!
-      end
+      word.downcase! if @exceptions.include?(word.downcase)
 
       # Handle the first word of a subsentence
       if subsentence == true
@@ -31,13 +27,9 @@ class String
       end
     end
 
-    unless string.first =~ /[A-Z]/
-      string.first.capitalize!
-    end
-
-    unless string.last =~ /[A-Z]/
-      string.last.capitalize!
-    end
+    # Capitalize the first and last word unless it already contains a capital letter
+    string.first.capitalize! unless string.first =~ /[A-Z]/
+    string.last.capitalize! unless string.last =~ /[A-Z]/
 
     string.join(" ")
   end
