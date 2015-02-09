@@ -6,15 +6,28 @@ class String
 
   def titlecase(guide = "default")
     @exceptions = @@guides[guide]
+    subsentence = false
 
     string = self.split
 
     string.each do |word|
+      # Skip over exceptions
+      unless word =~ /[A-Z]/ || @exceptions.include?(word)
+        word.capitalize!
+      end
+
+      # Downcase exceptions that were incorrectly input capitalized
       if @exceptions.include?(word.downcase)
         word.downcase!
       end
-      unless word =~ /[A-Z]/ || @exceptions.include?(word)
+
+      # Handle the first word of a subsentence
+      if subsentence == true
         word.capitalize!
+        subsentence = false
+      end
+      if word =~ /[:.;?!]/
+        subsentence = true
       end
     end
 

@@ -3,7 +3,7 @@ require 'spec_helper'
 describe String do
 
   describe "#titlecase" do
-    it "properly Title Cases a string" do
+    it "properly converts a string to title case" do
       string = "dog walks into a wall"
       expect(string.titlecase).to eq "Dog Walks Into a Wall"
     end
@@ -27,10 +27,15 @@ describe String do
       string = "There Is A Dog Barking In An Alley"
       expect(string.titlecase).to eq "There Is a Dog Barking in an Alley"
     end
+
+    it "always capitalizes the first word of a subsentence" do
+      string = "X-Men: the last stand"
+      expect(string.titlecase()).to eq "X-Men: The Last Stand"
+    end
   end
 
   describe "#titlecase!" do
-    it "titlecases and modifies the receiver" do
+    it "converts and modifies the receiver to title case" do
       string = "there is nothing to be afraid of"
       string.titlecase!
       expect(string).to eq "There Is Nothing to Be Afraid Of"
