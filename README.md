@@ -1,4 +1,4 @@
-# Pedantic Title Case
+# Pedantic Title Case 👓
 Pedantic Title Case is an extension to Ruby’s `String` class that converts text to [title case](http://en.wikipedia.org/wiki/Letter_case#Title_case) according to a default set of rules, or with rules that are specified by passing an optional argument. It also has the bonus of easily taking over ActiveSupport's `String#titlecase` alias, giving you a more reasonable result than the default while leaving `#titleize` untouched.
 
 ## Nota Bene
