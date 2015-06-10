@@ -28,6 +28,7 @@ class String
     end
 
     # Capitalize the first and last word unless it already contains a capital letter
+    # e.g iTunes should not have a capital I
     string.first.capitalize! unless string.first =~ /[A-Z]/
     string.last.capitalize! unless string.last =~ /[A-Z]/
 
